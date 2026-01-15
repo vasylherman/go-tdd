@@ -2,19 +2,19 @@ package iteration
 
 import "strings"
 
-// Repeat returns a string consisting of the input char repeated five times.
-func Repeat(char string, times int) string {
+// Repeat returns a string consisting of the input letter repeated five times.
+func Repeat(letter string, times int) string {
 	var repeated strings.Builder
 	for range times {
-		repeated.WriteString(char)
+		repeated.WriteString(letter)
 	}
 	return repeated.String()
 }
 
-func RepeatRune(char rune, times int) string {
+func RepeatRune(rune rune, times int) string {
 	var repeated strings.Builder
 	for range times {
-		repeated.WriteRune(char)
+		repeated.WriteRune(rune)
 	}
 	return repeated.String()
 }
