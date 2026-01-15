@@ -14,6 +14,12 @@ func ExampleRepeat() {
 // Run go test ./iteration -bench=. to execute BenchmarkRepeat
 func BenchmarkRepeat(b *testing.B) {
 	for b.Loop() {
-		Repeat("a", 50)
+		Repeat("a", 5)
+	}
+}
+
+func BenchmarkRepeatRune(b *testing.B) {
+	for b.Loop() {
+		RepeatRune('a', 5)
 	}
 }
