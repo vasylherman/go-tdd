@@ -1,10 +1,12 @@
 package iteration
 
+import "strings"
+
 // Repeat returns a string consisting of the input char repeated five times.
-func Repeat(char string) (repeated string) {
+func Repeat(char string) string {
+	var repeated strings.Builder
 	for range 5 {
-		// the Add AND assignment operator
-		repeated += char
+		repeated.WriteString(char)
 	}
-	return repeated
+	return repeated.String()
 }
