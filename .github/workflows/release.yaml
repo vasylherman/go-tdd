@@ -19,3 +19,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }} # if you don't want to set write permissions use a PAT token
           DEFAULT_BUMP: patch
+          TAG_PREFIX: 'v'
