@@ -18,6 +18,7 @@ func BenchmarkRepeat(b *testing.B) {
 	}
 }
 
+// https://www.youtube.com/watch?v=7h9qGwdWlJI
 func BenchmarkRepeatRune(b *testing.B) {
 	for b.Loop() {
 		RepeatRune('√', 50)
