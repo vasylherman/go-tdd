@@ -6,23 +6,23 @@ import (
 )
 
 func TestSumArray(t *testing.T) {
-	numbers := [...]int{1, 2, 3}
+	numbers := [...]int{1, 2, 6}
 	got := SumArray(numbers)
-	want := 6
+	want := 9
 	if want != got {
 		fmt.Printf("want %d, got %d, given %#v", want, got, numbers)
 	}
 }
 
 func ExampleSumArray() {
-	numbers := [...]int{1, 2, 3}
+	numbers := [...]int{1, 2, 6}
 	sum := SumArray(numbers)
 	fmt.Println(sum)
-	// Output: 6
+	// Output: 9
 }
 
 func BenchmarkSum(b *testing.B) {
-	numbers := [...]int{1, 2, 3}
+	numbers := [...]int{1, 2, 6}
 	for b.Loop() {
 		SumArray(numbers)
 	}
