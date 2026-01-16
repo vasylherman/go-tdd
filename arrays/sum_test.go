@@ -8,11 +8,21 @@ import (
 )
 
 func TestSumAllTails(t *testing.T) {
-	got := SumAllTails([]int{1, 2, 3}, []int{3, 3, 3})
-	want := []int{5, 6}
-	if !reflect.DeepEqual(got, want) {
-		t.Errorf("want %d, got %d", want, got)
-	}
+	t.Run("make sums of some slices", func(t *testing.T) {
+		got := SumAllTails([]int{1, 2, 3}, []int{3, 3, 3})
+		want := []int{5, 6}
+		if !reflect.DeepEqual(want, got) {
+			t.Errorf("want %d, got %d", want, got)
+		}
+	})
+	t.Run("safely sum empty slices", func(t *testing.T) {
+		got := SumAllTails([]int{}, []int{1, 2, 3})
+		want := []int{0, 5}
+		if !reflect.DeepEqual(want, got) {
+			t.Errorf("want %d, got %d", want, got)
+		}
+	})
+
 }
 
 func TestSumAll(t *testing.T) {
