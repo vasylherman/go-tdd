@@ -18,3 +18,8 @@ brew install golangci-lint
 go install golang.org/x/pkgsite/cmd/pkgsite@latest
 pkgsite -open .
 ```
+#### useful commands
+```shell
+go test ./arrays -bench=.
+go test ./arrays -v -cover
+```
