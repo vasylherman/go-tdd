@@ -5,18 +5,18 @@ import (
 	"testing"
 )
 
-func TestSumArray(t *testing.T) {
+func TestSum(t *testing.T) {
 	numbers := [...]int{1, 2, 6}
-	got := SumArray(numbers)
+	got := Sum(numbers)
 	want := 9
 	if want != got {
 		fmt.Printf("want %d, got %d, given %#v", want, got, numbers)
 	}
 }
 
-func ExampleSumArray() {
+func ExampleSum() {
 	numbers := [...]int{1, 2, 6}
-	sum := SumArray(numbers)
+	sum := Sum(numbers)
 	fmt.Println(sum)
 	// Output: 9
 }
@@ -24,6 +24,6 @@ func ExampleSumArray() {
 func BenchmarkSum(b *testing.B) {
 	numbers := [...]int{1, 2, 6}
 	for b.Loop() {
-		SumArray(numbers)
+		Sum(numbers)
 	}
 }
