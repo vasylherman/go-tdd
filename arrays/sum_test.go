@@ -40,3 +40,9 @@ func BenchmarkSum(b *testing.B) {
 		Sum(numbers)
 	}
 }
+
+func BenchmarkSumAll(b *testing.B) {
+	for b.Loop() {
+		SumAll([]int{1, 2, 3}, []int{3, 3, 3})
+	}
+}
