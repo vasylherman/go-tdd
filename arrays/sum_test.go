@@ -2,8 +2,19 @@ package arrays
 
 import (
 	"fmt"
+	"slices"
 	"testing"
 )
+
+func TestSumAll(t *testing.T) {
+	t.Run("multiple collections of any size", func(t *testing.T) {
+		got := SumAll([]int{1, 2}, []int{0, 9})
+		want := []int{3, 9}
+		if !slices.Equal(want, got) {
+			t.Errorf("want %d, got %d", want, got)
+		}
+	})
+}
 
 func TestSum(t *testing.T) {
 	t.Run("collection of any size", func(t *testing.T) {
@@ -11,7 +22,7 @@ func TestSum(t *testing.T) {
 		got := Sum(numbers)
 		want := 15
 		if want != got {
-			fmt.Printf("want %d, got %d, given %#v", want, got, numbers)
+			t.Errorf("want %d, got %d, given %#v", want, got, numbers)
 		}
 	})
 }
