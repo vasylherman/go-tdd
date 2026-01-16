@@ -2,9 +2,18 @@ package arrays
 
 import (
 	"fmt"
+	"reflect"
 	"slices"
 	"testing"
 )
+
+func TestSumAllTails(t *testing.T) {
+	got := SumAllTails([]int{1, 2, 3}, []int{3, 3, 3})
+	want := []int{5, 6}
+	if !reflect.DeepEqual(got, want) {
+		t.Errorf("want %d, got %d", want, got)
+	}
+}
 
 func TestSumAll(t *testing.T) {
 	t.Run("multiple collections of any size", func(t *testing.T) {
